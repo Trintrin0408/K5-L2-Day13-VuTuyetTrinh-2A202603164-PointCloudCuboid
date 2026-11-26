@@ -8,9 +8,12 @@
 - Hệ điều hành: Windows 11 Pro · Trình duyệt: Microsoft Edge · CVAT: Server 2.83.0
 - MSSV bạn ngồi cạnh: 2A202603229
 
-TODO(học viên): 2–3 câu: tổng bao nhiêu cuboid, frame nào ít nhất và vì sao; `selfcheck` cờ bao nhiêu cuboid trên tổng số; bạn tin phần nào nhất và phần nào còn yếu nhất (hướng, đáy, kích thước, class, vật xa).
+Tổng 75 cuboid. Ít nhất là 5 frame s03f01, s03f52, s04f51, s05f08, s05f31 (mỗi frame 6 cuboid), vì vật ở xa, thưa điểm. `selfcheck` cờ 3/75 cuboid, cả ba là Car có đáy thấp hơn mặt đường (chìm?): s01f27 #10 (0,49 m), s03f52 #6 (0,73 m), s04f51 #6 (0,32 m). Tôi tin nhất phần hướng (yaw); yếu nhất là vật xa.
 
-TODO(học viên): cách dùng CVAT, 3 dòng: đổi góc nhìn (nhìn từ trên xuống, xoay, dời); vẽ và chỉnh một cuboid (Shape, nháy đúp, Top/Side/Front); bật mũi tên hướng (Cuboid orientation) và xem cuboid trên ảnh camera (`preview`).
+Cách dùng CVAT:
+- Đổi góc nhìn: kéo chuột trái để xoay, kéo chuột phải để dời, cuộn để phóng to; xoay cảnh cho tới khi nhìn từ trên xuống.
+- Vẽ và chỉnh cuboid: chọn công cụ cuboid, chọn label, bấm Shape, nháy vào đám điểm; nháy đúp để chọn, rồi kéo cạnh và xoay trong các khung Top/Side/Front.
+- Hướng và ảnh camera: bật Cuboid orientation trong Settings; xem ảnh camera đi kèm frame ngay trong CVAT, kết hợp chạy `preview`.
 
 ## 2. Đọc frame (Bước 2)
 Hai frame đọc kỹ. Ảnh: `t1-<frame>-3d`, `t1-<frame>-top` (ảnh nhìn từ trên xuống, có đánh dấu phía trước, +x, +y).
@@ -18,7 +21,7 @@ Hai frame đọc kỹ. Ảnh: `t1-<frame>-3d`, `t1-<frame>-top` (ảnh nhìn t�
 | Frame | Phía trước xe ở cạnh nào của ảnh nhìn từ trên xuống; +x, +y chỉ về đâu | Mặt đường (phẳng/dốc; thấp hơn LiDAR ~ m) | Vật xa nhất đọc được (~ m) | Loại vật thấy | Vật phía sau / hai bên | Cụm chưa đọc được |
 |---|---|---|---|---|---|---|
 | s01f07 | Trước: cạnh trên; +x: trái; +y: dưới (phía sau) | Phẳng; thấp hơn LiDAR ~1,6 m | Xe buýt/xe tải phía trước, ~30 m; góc không camera nào thấy: chéo phía sau | Xe con, xe buýt/xe tải, người đi bộ, xe máy/xe đạp có người | Phía sau: xe con; hai bên: cây/bụi cây, nhà | Không có |
-| TODO(học viên) | | | | | | |
+| s01f27 | Trước: cạnh trên; +x: trái; +y: dưới (phía sau) | Phẳng; thấp hơn LiDAR ~1,6 m | Xe con, ~30 m | Xe con, xe buýt/xe tải | Phía sau và hai bên: xe con | Không có |
 
 TODO(học viên): 3 điều **chỉ camera** cho biết và 3 điều **chỉ LiDAR** cho biết, lấy từ chính hai frame trên.
 
@@ -74,6 +77,6 @@ TODO(học viên): đổi kiểm: MSSV người đã kiểm chéo với bạn, h
 (b) Dùng AI:
 - Công cụ: Claude Code.
 - Câu hỏi chính: cài môi trường Python, nâng cấp CVAT lên 2.83, chạy các lệnh của lab, đổi tên file báo cáo, hướng dẫn các bước làm lab; nhờ lưu, đổi tên ảnh chụp và vẽ chú thích hướng (Trước/+x/+y) lên 2 ảnh `-top` theo hướng tôi tự xác định.
-- Dùng kết quả: làm theo các lệnh cài đặt; không dùng AI để vẽ cuboid, đọc bảng A hay viết nhận xét. Lưu ý: tôi đã lỡ dán 12 ảnh chụp màn hình CVAT vào Claude Code để nhờ lưu file, trái quy định không đưa ảnh chụp cho AI; AI không dùng ảnh để đọc cảnh, chọn hiện tượng hay điền số.
+- Dùng kết quả: làm theo các lệnh cài đặt; không dùng AI để vẽ cuboid, đọc bảng A hay viết nhận xét. Lưu ý: tôi đã lỡ dán 12 ảnh chụp màn hình CVAT vào Claude Code để nhờ lưu file, trái quy định không đưa ảnh chụp cho AI; AI không dùng ảnh để đọc cảnh, chọn hiện tượng hay điền số. Ở §1 và dòng s01f27 của §2, AI hỏi tôi bằng câu trắc nghiệm và câu hỏi ngắn, rồi chép câu trả lời của tôi vào file; số liệu do tôi tự đọc và gõ, câu chữ cách dùng CVAT ở §1 là đáp án AI soạn sẵn, tôi chọn cái đúng với cách tôi làm.
 
 TODO(học viên): (a) hai câu, nói từ phía model sẽ học trên nhãn này: vì sao nhãn 3D đo bằng mét chứ không phải pixel; vì sao vật thưa điểm cần quy tắc riêng. (b) Dùng AI? Ghi 3 dòng: công cụ, câu hỏi chính, bạn dùng kết quả thế nào. Không dùng: ghi "không dùng". (c) Điều còn chưa chắc, lỗi phát hiện sau hạn (không chấm; viết bằng lời, không chép số từ phiếu hồ sơ lỗi).
