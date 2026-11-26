@@ -1,11 +1,14 @@
-# Báo cáo Day 13 — <Họ và tên>, <MSSV>
+# Báo cáo Day 13 — Vũ Tuyết Trinh, 2A202603164
 
-> **Cách dùng mẫu này:** đổi tên file thành `<MSSV>_<HoTen>.md` (họ tên không dấu, viết liền), ví dụ `2A202600123_NguyenVanAn.md`. Đổi tên, đừng chép thành file thứ hai.
->
 > Xoá mọi dấu TODO và dòng gợi ý (dòng bắt đầu bằng `>`). Mỗi con số lấy từ **bảng A** hoặc **phiếu tự kiểm** trong `submission/`, kèm đơn vị (m, °). Ảnh để trong `report/individual/images/` (nộp LMS trong file zip, không commit); trong báo cáo chỉ ghi **tên file ảnh**. Báo cáo này nằm trên repo public: không chép biển số, chữ trên biển hiệu hay biển chỉ đường, tên đường, địa danh; nhắc tới bạn khác thì ghi MSSV, không ghi họ tên. Cả báo cáo ~2 trang.
 
 ## 1. Kết luận trước
-TODO(học viên): mã số, task `D13-…`, 10 frame của bạn; hệ điều hành, trình duyệt, phiên bản CVAT (tên tài khoản → About); MSSV bạn ngồi cạnh. Rồi 2–3 câu: tổng bao nhiêu cuboid, frame nào ít nhất và vì sao; `selfcheck` cờ bao nhiêu cuboid trên tổng số; bạn tin phần nào nhất và phần nào còn yếu nhất (hướng, đáy, kích thước, class, vật xa).
+- Mã số: 2A202603164 · Task: `D13-2A202603164`
+- 10 frame: s01f07, s01f27, s02f03, s02f20, s03f01, s03f52, s04f09, s04f51, s05f08, s05f31
+- Hệ điều hành: Windows 11 Pro · Trình duyệt: Microsoft Edge · CVAT: Server 2.83.0
+- MSSV bạn ngồi cạnh: 2A202603229
+
+TODO(học viên): 2–3 câu: tổng bao nhiêu cuboid, frame nào ít nhất và vì sao; `selfcheck` cờ bao nhiêu cuboid trên tổng số; bạn tin phần nào nhất và phần nào còn yếu nhất (hướng, đáy, kích thước, class, vật xa).
 
 TODO(học viên): cách dùng CVAT, 3 dòng: đổi góc nhìn (nhìn từ trên xuống, xoay, dời); vẽ và chỉnh một cuboid (Shape, nháy đúp, Top/Side/Front); bật mũi tên hướng (Cuboid orientation) và xem cuboid trên ảnh camera (`preview`).
 
@@ -14,7 +17,7 @@ Hai frame đọc kỹ. Ảnh: `t1-<frame>-3d`, `t1-<frame>-top` (ảnh nhìn t�
 
 | Frame | Phía trước xe ở cạnh nào của ảnh nhìn từ trên xuống; +x, +y chỉ về đâu | Mặt đường (phẳng/dốc; thấp hơn LiDAR ~ m) | Vật xa nhất đọc được (~ m) | Loại vật thấy | Vật phía sau / hai bên | Cụm chưa đọc được |
 |---|---|---|---|---|---|---|
-| TODO(học viên) | | | | | | |
+| s01f07 | Trước: cạnh trên; +x: trái; +y: dưới (phía sau) | Phẳng; thấp hơn LiDAR ~1,6 m | Xe buýt/xe tải phía trước, ~30 m; góc không camera nào thấy: chéo phía sau | Xe con, xe buýt/xe tải, người đi bộ, xe máy/xe đạp có người | Phía sau: xe con; hai bên: cây/bụi cây, nhà | Không có |
 | TODO(học viên) | | | | | | |
 
 TODO(học viên): 3 điều **chỉ camera** cho biết và 3 điều **chỉ LiDAR** cho biết, lấy từ chính hai frame trên.
@@ -68,4 +71,9 @@ TODO(học viên): một câu quy luật ("xa gấp … lần thì số điểm 
 TODO(học viên): đổi kiểm: MSSV người đã kiểm chéo với bạn, hai con số nào được đối chiếu với bảng A, khớp hay lệch (lệch thì đã sửa gì).
 
 ## 6. Ý nghĩa của nhãn, cách dùng AI và điều còn chưa chắc
+(b) Dùng AI:
+- Công cụ: Claude Code.
+- Câu hỏi chính: cài môi trường Python, nâng cấp CVAT lên 2.83, chạy các lệnh của lab, đổi tên file báo cáo.
+- Dùng kết quả: làm theo các lệnh cài đặt; không dùng AI để vẽ cuboid, đọc bảng A hay viết nhận xét.
+
 TODO(học viên): (a) hai câu, nói từ phía model sẽ học trên nhãn này: vì sao nhãn 3D đo bằng mét chứ không phải pixel; vì sao vật thưa điểm cần quy tắc riêng. (b) Dùng AI? Ghi 3 dòng: công cụ, câu hỏi chính, bạn dùng kết quả thế nào. Không dùng: ghi "không dùng". (c) Điều còn chưa chắc, lỗi phát hiện sau hạn (không chấm; viết bằng lời, không chép số từ phiếu hồ sơ lỗi).
