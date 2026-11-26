@@ -73,7 +73,7 @@ TODO(học viên): đổi kiểm: MSSV người đã kiểm chéo với bạn, h
 ## 6. Ý nghĩa của nhãn, cách dùng AI và điều còn chưa chắc
 (b) Dùng AI:
 - Công cụ: Claude Code.
-- Câu hỏi chính: cài môi trường Python, nâng cấp CVAT lên 2.83, chạy các lệnh của lab, đổi tên file báo cáo.
-- Dùng kết quả: làm theo các lệnh cài đặt; không dùng AI để vẽ cuboid, đọc bảng A hay viết nhận xét.
+- Câu hỏi chính: cài môi trường Python, nâng cấp CVAT lên 2.83, chạy các lệnh của lab, đổi tên file báo cáo, hướng dẫn các bước làm lab; nhờ lưu, đổi tên ảnh chụp và vẽ chú thích hướng (Trước/+x/+y) lên 2 ảnh `-top` theo hướng tôi tự xác định.
+- Dùng kết quả: làm theo các lệnh cài đặt; không dùng AI để vẽ cuboid, đọc bảng A hay viết nhận xét. Lưu ý: tôi đã lỡ dán 12 ảnh chụp màn hình CVAT vào Claude Code để nhờ lưu file, trái quy định không đưa ảnh chụp cho AI; AI không dùng ảnh để đọc cảnh, chọn hiện tượng hay điền số.
 
 TODO(học viên): (a) hai câu, nói từ phía model sẽ học trên nhãn này: vì sao nhãn 3D đo bằng mét chứ không phải pixel; vì sao vật thưa điểm cần quy tắc riêng. (b) Dùng AI? Ghi 3 dòng: công cụ, câu hỏi chính, bạn dùng kết quả thế nào. Không dùng: ghi "không dùng". (c) Điều còn chưa chắc, lỗi phát hiện sau hạn (không chấm; viết bằng lời, không chép số từ phiếu hồ sơ lỗi).
